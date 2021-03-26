@@ -17,7 +17,7 @@ function App( props ) {
       important: Math.random() < 0.5 // true or false
     }
 
-    setNotes(notes.concat(newNoteObject)) //change de state of notes and re-render it
+    setNotes([...notes, newNoteObject]) //change de state of notes and re-render it
     //The method does not mutate the original notes array, but rather creates a new copy of the array with the new item added to the end. This is important since we must never mutate state directly in React!
     setNewNote('') // clean the value of newNote and re-render it
   }
@@ -40,7 +40,7 @@ function App( props ) {
      </ul>
      <form onSubmit={handleSubmit}>
        <input value={ newNote } onChange={handleChange}></input>
-       <button type="submit">Add new note</button>
+       <button>Add new note</button>
        
      </form>
    </div>
